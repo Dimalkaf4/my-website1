@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I'm Sorry</title>
+  <style>
+    /* Base page styling */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #2a7f8e;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Card styling with animation */
+    .card {
+      background-color: #2a7f8e;
+      color: #fff8d0;
+      border-radius: 12px;
+      padding: 50px 30px;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    /* Background image styling via pseudo-element */
+    .card::before {
+      content: "";
+      background: url('pexels-jonathanborba-29098396.jpg') no-repeat center top;
+      background-size: cover;
+      opacity: 0.15;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    /* Visible image styling */
+    .visible-image {
+      width: 120px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      animation: imageZoom 1s ease-out forwards;
+    }
+
+    /* Animation for the card (fade in and upward slide) */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animation for the visible image (subtle zoom-in) */
+    @keyframes imageZoom {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .message {
+      position: relative;
+      z-index: 1;
+    }
+
+    .small-text {
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .footer-text {
+      font-size: 16px;
+      color: #fff5c3;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="message">
+      <!-- Visible image element -->
+      <img src="pexels-jonathanborba-29098396.jpg" alt="Bouquet and Chocolates" class="visible-image">
+      <p class="small-text">I WASN'T THINKING</p>
+      <h1>I'm really sorry.</h1>
+      <p class="footer-text">I have a bouquet of flowers and a box of chocolates.</p>
+    </div>
+  </div>
+</body>
+</html>
